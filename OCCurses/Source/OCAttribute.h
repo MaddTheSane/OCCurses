@@ -31,11 +31,13 @@
 #import <Foundation/Foundation.h>
 #include <curses.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
  @enum OCAttributeIdentifier
  @discussion A convenience enumeration used to create standard text attributes.
  */
-typedef NS_OPTIONS(NSUInteger, OCAttributeIdentifier) {
+typedef NS_OPTIONS(unsigned int, OCAttributeIdentifier) {
 	OCAttributeNormal = A_NORMAL,
 	OCAttributeStandout = A_STANDOUT,
 	OCAttributeUnderline = A_UNDERLINE,
@@ -54,9 +56,7 @@ typedef NS_OPTIONS(NSUInteger, OCAttributeIdentifier) {
  attributes to text. Provided are the common text attributes provided by ncurses, with several
  cryptic ones left out.
  */
-@interface OCAttribute : NSObject {
-	OCAttributeIdentifier _attributeIdentifier;
-}
+@interface OCAttribute : NSObject
 
 #pragma mark Properties
 @property (readonly) OCAttributeIdentifier attributeIdentifier;
@@ -75,6 +75,8 @@ typedef NS_OPTIONS(NSUInteger, OCAttributeIdentifier) {
  @param theIdentifier the identifier to use
  @returns an initialized text attribute object
  */
-- (instancetype)initWithAttributeIdentifier:(OCAttributeIdentifier)theIdentifier;
+- (instancetype)initWithAttributeIdentifier:(OCAttributeIdentifier)theIdentifier NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

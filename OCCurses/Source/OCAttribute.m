@@ -41,6 +41,10 @@
 	return [[self alloc] initWithAttributeIdentifier:theIdentifier];
 }
 
+- (instancetype)init {
+	return [self initWithAttributeIdentifier:OCAttributeNormal];
+}
+
 - (id)initWithAttributeIdentifier:(OCAttributeIdentifier)theIdentifier {
 	if ((self = [super init])) {
 		_attributeIdentifier = theIdentifier;

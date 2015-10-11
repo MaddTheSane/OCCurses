@@ -105,7 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  Returns an array of subwindows belonging to the current window.
  */
-- (NSArray<OCWindow*> *)subwindows;
+@property (readonly, copy) NSArray<OCWindow*> *subwindows;
  
 /*!
  Adds a subwindow to the current window.

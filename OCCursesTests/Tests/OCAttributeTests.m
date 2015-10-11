@@ -12,11 +12,9 @@
 @implementation OCAttributeTests
 
 #pragma mark - Setup
-static NSAutoreleasePool *pool = nil;
 - (void)setUp
 {
     [super setUp];
-    pool = [[NSAutoreleasePool alloc] init];
 }
 
 #pragma mark - Tests
@@ -29,7 +27,6 @@ static NSAutoreleasePool *pool = nil;
 #pragma mark - Teardown
 - (void)tearDown
 {
-    [pool drain];
     [super tearDown];
 }
 

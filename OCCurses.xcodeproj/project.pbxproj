@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		550165C81BCB199C005CECC1 /* OCCurses.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4295A3131F358000704B36 /* OCCurses.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		550165EF1BCB21EA005CECC1 /* OCCursesTestsSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550165EE1BCB21EA005CECC1 /* OCCursesTestsSwift.swift */; };
+		550165F11BCB21EA005CECC1 /* OCCurses.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4295A3131F358000704B36 /* OCCurses.framework */; settings = {ASSET_TAGS = (); }; };
 		5C059D191320151900CF274E /* OCCursesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C059D171320151700CF274E /* OCCursesManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C059D1A1320151900CF274E /* OCCursesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C059D181320151700CF274E /* OCCursesManager.m */; };
 		5C059D2313201A7800CF274E /* OCCharacter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C059D2213201A7700CF274E /* OCCharacter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,6 +44,13 @@
 			remoteGlobalIDString = 5C4295A2131F358000704B36;
 			remoteInfo = OCCurses;
 		};
+		550165F21BCB21EA005CECC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C429599131F358000704B36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C4295A2131F358000704B36;
+			remoteInfo = OCCurses;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +69,9 @@
 
 /* Begin PBXFileReference section */
 		550165C91BCB1A86005CECC1 /* OCCurses.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = OCCurses.modulemap; sourceTree = "<group>"; };
+		550165EC1BCB21EA005CECC1 /* OCCursesTestsSwift.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCCursesTestsSwift.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		550165EE1BCB21EA005CECC1 /* OCCursesTestsSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCCursesTestsSwift.swift; sourceTree = "<group>"; };
+		550165F01BCB21EA005CECC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C059D171320151700CF274E /* OCCursesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCursesManager.h; sourceTree = "<group>"; };
 		5C059D181320151700CF274E /* OCCursesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCursesManager.m; sourceTree = "<group>"; };
 		5C059D2213201A7700CF274E /* OCCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCharacter.h; sourceTree = "<group>"; };
@@ -95,6 +107,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		550165E91BCB21EA005CECC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550165F11BCB21EA005CECC1 /* OCCurses.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C42959F131F358000704B36 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +135,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		550165ED1BCB21EA005CECC1 /* OCCursesTestsSwift */ = {
+			isa = PBXGroup;
+			children = (
+				550165EE1BCB21EA005CECC1 /* OCCursesTestsSwift.swift */,
+				550165F01BCB21EA005CECC1 /* Info.plist */,
+			);
+			path = OCCursesTestsSwift;
+			sourceTree = "<group>";
+		};
 		5C0AD6461320919400BF7B1D /* Window */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +176,7 @@
 			children = (
 				5C4295AC131F358000704B36 /* OCCurses */,
 				5C8201A2132650FC00341B5C /* OCCursesTests */,
+				550165ED1BCB21EA005CECC1 /* OCCursesTestsSwift */,
 				5C4295A5131F358000704B36 /* Frameworks */,
 				5C4295A4131F358000704B36 /* Products */,
 			);
@@ -156,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				5C82019B132650FC00341B5C /* OCCursesTests.xctest */,
+				550165EC1BCB21EA005CECC1 /* OCCursesTestsSwift.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,6 +303,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		550165EB1BCB21EA005CECC1 /* OCCursesTestsSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 550165F41BCB21EA005CECC1 /* Build configuration list for PBXNativeTarget "OCCursesTestsSwift" */;
+			buildPhases = (
+				550165E81BCB21EA005CECC1 /* Sources */,
+				550165E91BCB21EA005CECC1 /* Frameworks */,
+				550165EA1BCB21EA005CECC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				550165F31BCB21EA005CECC1 /* PBXTargetDependency */,
+			);
+			name = OCCursesTestsSwift;
+			productName = OCCursesTestsSwift;
+			productReference = 550165EC1BCB21EA005CECC1 /* OCCursesTestsSwift.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5C4295A2131F358000704B36 /* OCCurses */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C4295B5131F358100704B36 /* Build configuration list for PBXNativeTarget "OCCurses" */;
@@ -317,6 +366,11 @@
 			attributes = {
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Itai Ferber";
+				TargetAttributes = {
+					550165EB1BCB21EA005CECC1 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
 			};
 			buildConfigurationList = 5C42959C131F358000704B36 /* Build configuration list for PBXProject "OCCurses" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -332,11 +386,19 @@
 			targets = (
 				5C4295A2131F358000704B36 /* OCCurses */,
 				5C82019A132650FC00341B5C /* OCCursesTests */,
+				550165EB1BCB21EA005CECC1 /* OCCursesTestsSwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		550165EA1BCB21EA005CECC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C4295A1131F358000704B36 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +418,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		550165E81BCB21EA005CECC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550165EF1BCB21EA005CECC1 /* OCCursesTestsSwift.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C42959E131F358000704B36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -388,6 +458,11 @@
 			target = 5C4295A2131F358000704B36 /* OCCurses */;
 			targetProxy = 550165C51BCB18F7005CECC1 /* PBXContainerItemProxy */;
 		};
+		550165F31BCB21EA005CECC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C4295A2131F358000704B36 /* OCCurses */;
+			targetProxy = 550165F21BCB21EA005CECC1 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -410,6 +485,47 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		550165F51BCB21EA005CECC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = OCCursesTestsSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.maddthesane.OCCursesTestsSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		550165F61BCB21EA005CECC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = OCCursesTestsSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.maddthesane.OCCursesTestsSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		5C4295B3131F358100704B36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -592,6 +708,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		550165F41BCB21EA005CECC1 /* Build configuration list for PBXNativeTarget "OCCursesTestsSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550165F51BCB21EA005CECC1 /* Debug */,
+				550165F61BCB21EA005CECC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		5C42959C131F358000704B36 /* Build configuration list for PBXProject "OCCurses" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
