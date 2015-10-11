@@ -35,7 +35,7 @@
  @discussion A list of acceptable user keystrokes that ncurses accepts (given that keypad() is
  enabled) for processing.
  */
-typedef enum {
+typedef NS_ENUM(int, OCKey) {
 	OCKeyDown = KEY_DOWN,						/* down-arrow key */
 	OCKeyUp = KEY_UP,							/* up-arrow key */
 	OCKeyLeft = KEY_LEFT,						/* left-arrow key */
@@ -125,7 +125,7 @@ typedef enum {
 	OCKeyMouse = KEY_MOUSE,						/* Mouse event has occurred */
 	OCKeyResize = KEY_RESIZE,					/* Terminal resize event */
 	OCKeyEvent = KEY_EVENT						/* We were interrupted by an event */
-} OCKey;
+};
 
 /*!
  A macro definition of a method for getting function keys mapped (valid up to OCKeyFunction(64)).

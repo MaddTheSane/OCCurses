@@ -36,7 +36,7 @@
  @discussion A convenience enumeration for ensuring only specific color definitions.
  ncurses colors are integers between 0 and 7.
  */
-typedef enum {
+typedef NS_ENUM(char, OCColorIdentifier) {
 	OCColorBlack = COLOR_BLACK,
 	OCColorRed = COLOR_RED,
 	OCColorGreen = COLOR_GREEN,
@@ -45,7 +45,7 @@ typedef enum {
 	OCColorMagenta = COLOR_MAGENTA,
 	OCColorCyan = COLOR_CYAN,
 	OCColorWhite = COLOR_WHITE
-} OCColorIdentifier;
+};
 
 /*!
  @class OCColor
@@ -65,48 +65,48 @@ typedef enum {
  Creates a new black color object.
  @returns an autoreleased black color object
  */
-+ (id)blackColor;
++ (instancetype)blackColor;
 
 /*!
  Creates a new red color object.
  @returns an autoreleased red color object
  */
-+ (id)redColor;
++ (instancetype)redColor;
 
 /*!
  Creates a new green color object.
  @returns an autoreleased green color object
  */
-+ (id)greenColor;
++ (instancetype)greenColor;
 
 /*!
  Creates a new yellow color object.
  @returns an autoreleased yellow color object
  */
-+ (id)yellowColor;
++ (instancetype)yellowColor;
 
 /*!
  Creates a new blue color object.
  @returns an autoreleased blue color object
  */
-+ (id)blueColor;
++ (instancetype)blueColor;
 
 /*!
  Creates a new magenta color object.
  @returns an autoreleased magenta color object
  */
-+ (id)magentaColor;
++ (instancetype)magentaColor;
 
 /*!
  Creates a new cyan color object.
  @returns an autoreleased cyan color object
  */
-+ (id)cyanColor;
++ (instancetype)cyanColor;
 
 /*!
  Creates a new white color object.
  @returns an autoreleased white color object
  */
-+ (id)whiteColor;
++ (instancetype)whiteColor;
 
 @end

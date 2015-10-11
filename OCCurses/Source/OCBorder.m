@@ -141,7 +141,7 @@ BOOL OCEqualBorderComponents (OCBorderComponents first, OCBorderComponents secon
 
 #pragma mark - Description
 - (NSString *)description {
-	return [NSString stringWithFormat:@"<OCBorder: %u %u %u %u %u %u %u %u %u>",
+	return [NSString stringWithFormat:@"<OCBorder: %u %u %u %u %u %u %u %u>",
 			_borderComponents.topLeftCorner,
 			_borderComponents.topFill,
 			_borderComponents.topRightCorner,

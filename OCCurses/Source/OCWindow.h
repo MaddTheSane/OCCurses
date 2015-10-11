@@ -29,7 +29,6 @@
  */
 
 #import <Foundation/Foundation.h>
-#include <panel.h>
 #import "OCAttribute.h"
 #import "OCBorder.h"
 #import "OCCharacter.h"
@@ -54,7 +53,6 @@
 	BOOL _keypadEnabled;
 	
 	WINDOW *_window;
-	PANEL *_panel;
 }
 
 #pragma mark - Properties
@@ -67,7 +65,7 @@
  root of the window hierarchy.
  @return the main window
  */
-+ (id)mainWindow;
++ (instancetype)mainWindow;
 
 /*!
  Creates a new autoreleased window with a given title and frame (and a default parent window of 
@@ -76,7 +74,7 @@
  @param theFrame the frame to give the window
  @returns a new autoreleased window
  */
-+ (id)windowWithTitle:(NSString *)theTitle frame:(NSRect)theFrame;
++ (instancetype)windowWithTitle:(NSString *)theTitle frame:(NSRect)theFrame;
 
 /*!
  Creates a new autoreleased window with a given title, frame, and parent window.
@@ -85,7 +83,7 @@
  @param theWindow the parent window to create a subwindow for
  @returns a new autoreleased window
  */
-+ (id)windowWithTitle:(NSString *)theTitle frame:(NSRect)theFrame parentWindow:(OCWindow *)theWindow;
++ (instancetype)windowWithTitle:(NSString *)theTitle frame:(NSRect)theFrame parentWindow:(OCWindow *)theWindow;
 
 /*!
  Initializes a new autoreleased window with a given title and frame (and a default parent window of 
@@ -94,7 +92,7 @@
  @param theFrame the frame to give the window
  @returns a new initialized window
  */
-- (id)initWithTitle:(NSString *)theTitle frame:(NSRect)theFrame;
+- (instancetype)initWithTitle:(NSString *)theTitle frame:(NSRect)theFrame;
 
 /*!
  Initializes a new autoreleased window with a given title, frame, and parent window.
@@ -103,7 +101,7 @@
  @param theWindow the parent window to create a subwindow for
  @returns a new initialized window
  */
-- (id)initWithTitle:(NSString *)theTitle frame:(NSRect)theFrame parentWindow:(OCWindow *)theWindow;
+- (instancetype)initWithTitle:(NSString *)theTitle frame:(NSRect)theFrame parentWindow:(OCWindow *)theWindow;
 
 
 #pragma mark - Subwindow Methods

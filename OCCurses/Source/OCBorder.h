@@ -107,14 +107,14 @@ extern BOOL OCEqualBorderComponents (OCBorderComponents first, OCBorderComponent
  @param theString the component string (precondition: aString != nil && [aString length] == 8)
  @returns an autoreleased border object
  */
-+ (id)borderWithComponentString:(NSString *)theString;
++ (instancetype)borderWithComponentString:(NSString *)theString;
 
 /*!
  Creates a new border with the given components. This is safe for use with special OCCharacters.
  @param theComponents the border components to use
  @returns an autoreleased border object
  */
-+ (id)borderWithComponents:(OCBorderComponents)theComponents;
++ (instancetype)borderWithComponents:(OCBorderComponents)theComponents;
 
 /*!
  Initializes a new border with the given component string. Since NSString stores characters in 
@@ -124,13 +124,13 @@ extern BOOL OCEqualBorderComponents (OCBorderComponents first, OCBorderComponent
  @param theString the component string (precondition: aString != nil && [aString length] == 8)
  @returns an initialized border object
  */
-- (id)initWithComponentString:(NSString *)theString;
+- (instancetype)initWithComponentString:(NSString *)theString;
 
 /*!
  Initializes a new border with the given components. This is safe for use with special OCCharacters.
  @param theComponents the border components to use
  @returns an initialized border object
  */
-- (id)initWithComponents:(OCBorderComponents)theComponents;
+- (instancetype)initWithComponents:(OCBorderComponents)theComponents;
 
 @end

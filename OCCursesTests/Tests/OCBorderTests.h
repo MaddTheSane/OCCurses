@@ -6,14 +6,14 @@
 //  Copyright 2011 Itai Ferber. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "OCBorder.h"
 
 /*!
  @class OCBorderTests
  @discussion A unit test class for OCBorder.
  */
-@interface OCBorderTests : SenTestCase {}
+@interface OCBorderTests : XCTestCase {}
 
 /*!
  @test Test Creation with Nil String

@@ -21,14 +21,14 @@ static NSAutoreleasePool *pool = nil;
 #pragma mark - Tests
 - (void)testCreationWithNilColors {
 	OCColorPair *pair;
-	STAssertThrows((pair = [OCColorPair colorPairWithForegroundColor:nil backgroundColor:nil]), @"FAILURE: Expected color pair initialization to throw exception (instead: %@).", pair);
+	XCTAssertThrows((pair = [OCColorPair colorPairWithForegroundColor:nil backgroundColor:nil]), @"FAILURE: Expected color pair initialization to throw exception (instead: %@).", pair);
 }
 
 - (void)testCreationWithValidColors {
 	OCColorPair *pair = [OCColorPair colorPairWithForegroundColor:[OCColor blackColor] backgroundColor:[OCColor blackColor]];
-	STAssertNotNil(pair, @"FAILURE: Expected color pair to be initialized correctly (%@ instead)!", pair);
-	STAssertEqualObjects([pair foregroundColor], [OCColor blackColor], @"FAILURE: Expected foreground color of pair to be black (%@ instead)!", [pair foregroundColor]);
-	STAssertEqualObjects([pair backgroundColor], [OCColor blackColor], @"FAILURE: Expected background color of pair to be black (%@ instead)!", [pair backgroundColor]);
+	XCTAssertNotNil(pair, @"FAILURE: Expected color pair to be initialized correctly (%@ instead)!", pair);
+	XCTAssertEqualObjects([pair foregroundColor], [OCColor blackColor], @"FAILURE: Expected foreground color of pair to be black (%@ instead)!", [pair foregroundColor]);
+	XCTAssertEqualObjects([pair backgroundColor], [OCColor blackColor], @"FAILURE: Expected background color of pair to be black (%@ instead)!", [pair backgroundColor]);
 }
 
 #pragma mark - Teardown

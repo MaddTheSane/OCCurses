@@ -20,35 +20,35 @@ static NSAutoreleasePool *pool = nil;
 
 #pragma mark - Tests
 - (void)testBlackColor {
-	STAssertTrue([[OCColor blackColor] colorIdentifier] == OCColorBlack, @"[OCColor blackColor].colorIdentifier === OCColorBlack");
+	XCTAssertTrue([[OCColor blackColor] colorIdentifier] == OCColorBlack, @"[OCColor blackColor].colorIdentifier === OCColorBlack");
 }
 
 - (void)testRedColor {
-	STAssertTrue([[OCColor redColor] colorIdentifier] == OCColorRed, @"[OCColor redColor].colorIdentifier === OCColorRed");
+	XCTAssertTrue([[OCColor redColor] colorIdentifier] == OCColorRed, @"[OCColor redColor].colorIdentifier === OCColorRed");
 }
 
 - (void)testGreenColor {
-	STAssertTrue([[OCColor greenColor] colorIdentifier] == OCColorGreen, @"[OCColor greenColor].colorIdentifier === OCColorGreen");
+	XCTAssertTrue([[OCColor greenColor] colorIdentifier] == OCColorGreen, @"[OCColor greenColor].colorIdentifier === OCColorGreen");
 }
 
 - (void)testYellowcolor {
-	STAssertTrue([[OCColor yellowColor] colorIdentifier] == OCColorYellow, @"[OCColor yellowColor].colorIdentifier === OCColorYellow");
+	XCTAssertTrue([[OCColor yellowColor] colorIdentifier] == OCColorYellow, @"[OCColor yellowColor].colorIdentifier === OCColorYellow");
 }
 
 - (void)testBlueColor {
-	STAssertTrue([[OCColor blueColor] colorIdentifier] == OCColorBlue, @"[OCColor blueColor].colorIdentifier === OCColorBlue");
+	XCTAssertTrue([[OCColor blueColor] colorIdentifier] == OCColorBlue, @"[OCColor blueColor].colorIdentifier === OCColorBlue");
 }
 
 - (void)testMagentaColor {
-	STAssertTrue([[OCColor magentaColor] colorIdentifier] == OCColorMagenta, @"[OCColor magentaColor].colorIdentifier === OCColorMagenta");
+	XCTAssertTrue([[OCColor magentaColor] colorIdentifier] == OCColorMagenta, @"[OCColor magentaColor].colorIdentifier === OCColorMagenta");
 }
 
 - (void)testCyanColor {
-	STAssertTrue([[OCColor cyanColor] colorIdentifier] == OCColorCyan, @"[OCColor cyanColor].colorIdentifier === OCCyanColor");
+	XCTAssertTrue([[OCColor cyanColor] colorIdentifier] == OCColorCyan, @"[OCColor cyanColor].colorIdentifier === OCCyanColor");
 }
 
 - (void)testWhiteColor {
-	STAssertTrue([[OCColor whiteColor] colorIdentifier] == OCColorWhite, @"[OCColor whiteColor].colorIdentifier == OCColorWhite");
+	XCTAssertTrue([[OCColor whiteColor] colorIdentifier] == OCColorWhite, @"[OCColor whiteColor].colorIdentifier == OCColorWhite");
 }
 
 #pragma mark - Teardown

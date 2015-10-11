@@ -6,7 +6,7 @@
 //  Copyright 2011 Itai Ferber. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "OCAttribute.h"
 
 
@@ -14,7 +14,7 @@
  @class OCAttributeTests
  @discussion A unit test class for OCAttribute.
  */
-@interface OCAttributeTests : SenTestCase {}
+@interface OCAttributeTests : XCTestCase {}
 
 /*!
  @test Test Creation With Valid Attribute Identifier

@@ -58,7 +58,7 @@
  @param theBackground the background color to use (precondition: aBackground != nil)
  @returns an autoreleased color pair object
  */
-+ (id)colorPairWithForegroundColor:(OCColor *)theForeground backgroundColor:(OCColor *)theBackground;
++ (instancetype)colorPairWithForegroundColor:(OCColor *)theForeground backgroundColor:(OCColor *)theBackground;
 
 /*!
  Initializes a new color pair with a statically created identifier.
@@ -66,6 +66,6 @@
  @param theBackground the background color to use (precondition: aBackground != nil)
  @returns an initialized color pair object
  */
-- (id)initWithForegroundColor:(OCColor *)theForeground backgroundColor:(OCColor *)theBackground;
+- (instancetype)initWithForegroundColor:(OCColor *)theForeground backgroundColor:(OCColor *)theBackground;
 
 @end

@@ -6,14 +6,14 @@
 //  Copyright 2011 Itai Ferber. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "OCColorPair.h"
 
 /*!
  @class OCColorPairTests
  @discussion A unit test class for OCColorPair.
  */
-@interface OCColorPairTests : SenTestCase {}
+@interface OCColorPairTests : XCTestCase {}
 
 /*!
  @test Test Creation With Nil Colors

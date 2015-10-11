@@ -1,10 +1,13 @@
 //
-//  OCCursesFramework.h
+//  OCCurses.h
 //  OCCurses
 //
-//  Created by Itai Ferber on 3/3/11.
-//  Copyright 2011 Itai Ferber. All rights reserved.
+//  Created by C.W. Betts on 10/10/15.
+//  Copyright © 2015 Itai Ferber. All rights reserved.
 //
+
+#ifndef OCCurses_h
+#define OCCurses_h
 
 /**
  Copyright (c) 2011 Itai Ferber
@@ -28,14 +31,6 @@
  THE SOFTWARE.
  */
 
-#import "OCAttribute.h"
-#import "OCBorder.h"
-#import "OCColor.h"
-#import "OCColorPair.h"
+#import "OCCursesFramework.h"
 
-#import "OCCharacter.h"
-#import "OCKey.h"
-
-#import "OCCursesManager.h"
-
-#import "OCWindow.h"
+#endif /* OCCurses_h */

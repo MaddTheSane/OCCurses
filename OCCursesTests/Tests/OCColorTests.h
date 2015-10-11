@@ -6,14 +6,14 @@
 //  Copyright 2011 Itai Ferber. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "OCColor.h"
 
 /*!
  @class OCColorTests
  @discussion A unit test class for OCColor.
  */
-@interface OCColorTests : SenTestCase {}
+@interface OCColorTests : XCTestCase {}
 
 /*!
  @test Test Black Color

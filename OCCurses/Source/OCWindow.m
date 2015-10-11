@@ -29,6 +29,7 @@
  */
 
 #import "OCWindow.h"
+#include <panel.h>
 
 #define EVALUATE_WITH_ARGUMENT_LIST(format, argumentList, statement, returnType) va_list argumentList; \
 																				 va_start(argumentList, format); \
@@ -38,7 +39,9 @@
 #define UPDATE_PANELS update_panels(), doupdate()
 
 @implementation OCWindow
-
+{
+	PANEL *_panel;
+}
 #pragma mark - Synthesis
 @synthesize title = _title;
 
@@ -327,7 +330,7 @@ static OCWindow *mainWindow = nil;
 		NSInteger character = wgetch(_window);
 		if (character == ERR || character == '\n' || character == EOF) break;
 		if (!string) string = [NSMutableString string];
-		[string appendFormat:@"%c", character];
+		[string appendFormat:@"%ld", (long)character];
 	}
 	
 	return string;

@@ -35,7 +35,7 @@
  @enum OCAttributeIdentifier
  @discussion A convenience enumeration used to create standard text attributes.
  */
-typedef enum {
+typedef NS_OPTIONS(NSUInteger, OCAttributeIdentifier) {
 	OCAttributeNormal = A_NORMAL,
 	OCAttributeStandout = A_STANDOUT,
 	OCAttributeUnderline = A_UNDERLINE,
@@ -46,7 +46,7 @@ typedef enum {
 	OCAttributeAlternativeCharacterSet = A_ALTCHARSET,
 	OCAttributeInvisible = A_INVIS,
 	OCAttributeProtected = A_PROTECT
-} OCAttributeIdentifier;
+};
 
 /*!
  @class OCAttribute
@@ -68,13 +68,13 @@ typedef enum {
  @param theIdentifier the identifier to use
  @returns an autoreleased text attribute object
  */
-+ (id)attributeWithAttributeIdentifier:(OCAttributeIdentifier)theIdentifier;
++ (instancetype)attributeWithAttributeIdentifier:(OCAttributeIdentifier)theIdentifier;
 
 /*!
  Initializes a new text attribute with the given identifier.
  @param theIdentifier the identifier to use
  @returns an initialized text attribute object
  */
-- (id)initWithAttributeIdentifier:(OCAttributeIdentifier)theIdentifier;
+- (instancetype)initWithAttributeIdentifier:(OCAttributeIdentifier)theIdentifier;
 
 @end
