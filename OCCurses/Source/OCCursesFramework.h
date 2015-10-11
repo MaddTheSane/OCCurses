@@ -28,14 +28,14 @@
  THE SOFTWARE.
  */
 
-#import "OCAttribute.h"
-#import "OCBorder.h"
-#import "OCColor.h"
-#import "OCColorPair.h"
+#import <OCCurses/OCAttribute.h>
+#import <OCCurses/OCBorder.h>
+#import <OCCurses/OCColor.h>
+#import <OCCurses/OCColorPair.h>
 
-#import "OCCharacter.h"
-#import "OCKey.h"
+#import <OCCurses/OCCharacter.h>
+#import <OCCurses/OCKey.h>
 
-#import "OCCursesManager.h"
+#import <OCCurses/OCCursesManager.h>
 
-#import "OCWindow.h"
+#import <OCCurses/OCWindow.h>

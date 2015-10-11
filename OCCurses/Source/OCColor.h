@@ -31,6 +31,8 @@
 #import <Foundation/Foundation.h>
 #include <curses.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /*!
  @enum OCColorIdentifier
  @discussion A convenience enumeration for ensuring only specific color definitions.
@@ -53,9 +55,7 @@ typedef NS_ENUM(char, OCColorIdentifier) {
  creating preset colors, and integrates with OCColorPair to create color attributes that can be
  applied to text.
  */
-@interface OCColor : NSObject {
-	OCColorIdentifier _colorIdentifier;
-}
+@interface OCColor : NSObject
 
 #pragma mark Properties
 @property (readonly) OCColorIdentifier colorIdentifier;
@@ -110,3 +110,5 @@ typedef NS_ENUM(char, OCColorIdentifier) {
 + (instancetype)whiteColor;
 
 @end
+
+NS_ASSUME_NONNULL_END

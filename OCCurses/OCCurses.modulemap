@@ -1,0 +1,6 @@
+framework module OCCurses {
+	umbrella header "OCCursesFramework.h"
+
+	export *
+	module * { export * }
+}

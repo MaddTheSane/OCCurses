@@ -30,8 +30,10 @@
 
 #import <Foundation/Foundation.h>
 #include <curses.h>
-#import "OCAttribute.h"
-#import "OCColor.h"
+#import <OCCurses/OCAttribute.h>
+#import <OCCurses/OCColor.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @class OCColorPair
@@ -41,10 +43,7 @@
  color, and a background color. Once color pairs are initialized, they can be applied like any other
  text attribute using their identifiers.
  */
-@interface OCColorPair : OCAttribute {
-	OCColor *_foregroundColor;
-	OCColor *_backgroundColor;
-}
+@interface OCColorPair : OCAttribute
 
 #pragma mark Properties
 @property (readonly) OCColor *foregroundColor;
@@ -69,3 +68,5 @@
 - (instancetype)initWithForegroundColor:(OCColor *)theForeground backgroundColor:(OCColor *)theBackground;
 
 @end
+
+NS_ASSUME_NONNULL_END

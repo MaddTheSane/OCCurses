@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "OCAttribute.h"
+#import <OCCurses/OCAttribute.h>
 
 
 /*!

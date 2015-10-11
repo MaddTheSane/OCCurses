@@ -30,8 +30,8 @@
 
 #import <Foundation/Foundation.h>
 #include <curses.h>
-#import "OCWindow.h"
-#import "OCKey.h"
+#import <OCCurses/OCWindow.h>
+#import <OCCurses/OCKey.h>
 
 /*!
  @class OCCursesManager
@@ -42,7 +42,7 @@
  At the initialization of the system, noraw(), cbreak() and noecho() are called as common default
  settings. Use the given methods to reapply settings as necessary.
  */
-@interface OCCursesManager : NSObject {}
+@interface OCCursesManager : NSObject
 
 #pragma mark States
 /*!

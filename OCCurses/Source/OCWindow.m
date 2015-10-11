@@ -36,14 +36,22 @@
 																				 returnType result = statement; \
 																				 va_end(argumentList); \
 																				 return result;
-#define UPDATE_PANELS update_panels(), doupdate()
+#define UPDATE_PANELS update_panels(); doupdate()
 
 @implementation OCWindow
 {
+	NSMutableArray *_subwindows;
+	NSMutableSet *_attributes;
+	OCBorder *_border;
+	BOOL _keypadEnabled;
+	
+	WINDOW *_window;
 	PANEL *_panel;
 }
 #pragma mark - Synthesis
 @synthesize title = _title;
+@synthesize border = _border;
+@synthesize frame = _frame;
 
 #pragma mark - Initialization
 static OCWindow *mainWindow = nil;
@@ -128,7 +136,7 @@ static OCWindow *mainWindow = nil;
 
 #pragma mark - Subwindow Methods
 - (NSArray *)subwindows {
-	return _subwindows;
+	return [_subwindows copy];
 }
 
 - (void)addSubwindow:(OCWindow *)theWindow {
@@ -325,15 +333,15 @@ static OCWindow *mainWindow = nil;
 
 #pragma mark - Input Methods
 - (NSString *)getString {
-	NSMutableString *string = nil;
+	NSMutableString *string = [[NSMutableString alloc] init];
 	while (YES) {
-		NSInteger character = wgetch(_window);
+		int character = wgetch(_window);
 		if (character == ERR || character == '\n' || character == EOF) break;
 		if (!string) string = [NSMutableString string];
-		[string appendFormat:@"%ld", (long)character];
+		[string appendFormat:@"%c", character];
 	}
 	
-	return string;
+	return [string copy];
 }
 
 - (NSString *)getStringFromLocation:(NSPoint)theLocation {

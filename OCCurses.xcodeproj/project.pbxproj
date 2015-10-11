@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55E97AAE1BCA290100B2C9EC /* OCCurses.h in Headers */ = {isa = PBXBuildFile; fileRef = 55E97AAD1BCA290100B2C9EC /* OCCurses.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		550165C81BCB199C005CECC1 /* OCCurses.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4295A3131F358000704B36 /* OCCurses.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5C059D191320151900CF274E /* OCCursesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C059D171320151700CF274E /* OCCursesManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C059D1A1320151900CF274E /* OCCursesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C059D181320151700CF274E /* OCCursesManager.m */; };
 		5C059D2313201A7800CF274E /* OCCharacter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C059D2213201A7700CF274E /* OCCharacter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,8 +34,32 @@
 		5CD61A4813342BA200C69FAF /* OCAttributeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD61A4713342BA200C69FAF /* OCAttributeTests.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		550165C51BCB18F7005CECC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C429599131F358000704B36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C4295A2131F358000704B36;
+			remoteInfo = OCCurses;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		550165C71BCB1988005CECC1 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				550165C81BCB199C005CECC1 /* OCCurses.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		55E97AAD1BCA290100B2C9EC /* OCCurses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCurses.h; sourceTree = "<group>"; };
+		550165C91BCB1A86005CECC1 /* OCCurses.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = OCCurses.modulemap; sourceTree = "<group>"; };
 		5C059D171320151700CF274E /* OCCursesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCursesManager.h; sourceTree = "<group>"; };
 		5C059D181320151700CF274E /* OCCursesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCCursesManager.m; sourceTree = "<group>"; };
 		5C059D2213201A7700CF274E /* OCCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCCharacter.h; sourceTree = "<group>"; };
@@ -157,6 +181,7 @@
 		5C4295AD131F358100704B36 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				550165C91BCB1A86005CECC1 /* OCCurses.modulemap */,
 				5C4295AE131F358100704B36 /* OCCurses-Info.plist */,
 				5C4295AF131F358100704B36 /* InfoPlist.strings */,
 				5C4295B2131F358100704B36 /* OCCurses-Prefix.pch */,
@@ -167,7 +192,6 @@
 		5C4295B8131F35B500704B36 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				55E97AAD1BCA290100B2C9EC /* OCCurses.h */,
 				5C0AD649132091BB00BF7B1D /* OCCursesFramework.h */,
 				5C4295BE131F39E200704B36 /* Attributes */,
 				5C0AD648132091A900BF7B1D /* Keyboard */,
@@ -242,7 +266,6 @@
 				5C059D2313201A7800CF274E /* OCCharacter.h in Headers */,
 				5C0AD64413207DBA00BF7B1D /* OCKey.h in Headers */,
 				5C0AD64A132091BC00BF7B1D /* OCCursesFramework.h in Headers */,
-				55E97AAE1BCA290100B2C9EC /* OCCurses.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,10 +297,12 @@
 				5C820196132650FC00341B5C /* Sources */,
 				5C820197132650FC00341B5C /* Frameworks */,
 				5C820198132650FC00341B5C /* Resources */,
+				550165C71BCB1988005CECC1 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				550165C61BCB18F7005CECC1 /* PBXTargetDependency */,
 			);
 			name = OCCursesTests;
 			productName = OCCursesTests;
@@ -357,6 +382,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		550165C61BCB18F7005CECC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C4295A2131F358000704B36 /* OCCurses */;
+			targetProxy = 550165C51BCB18F7005CECC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		5C4295AF131F358100704B36 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -380,21 +413,24 @@
 		5C4295B3131F358100704B36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ARC_MIGRATION = donothing;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -415,21 +451,22 @@
 		5C4295B4131F358100704B36 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ARC_MIGRATION = donothing;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -450,6 +487,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
@@ -463,6 +501,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCCurses/OCCurses-Prefix.pch";
 				INFOPLIST_FILE = "OCCurses/OCCurses-Info.plist";
+				MODULEMAP_FILE = OCCurses/OCCurses.modulemap;
 				OTHER_LDFLAGS = (
 					"-lpanel",
 					"-lncurses",
@@ -479,6 +518,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -493,6 +533,7 @@
 				GCC_PREFIX_HEADER = "OCCurses/OCCurses-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = "OCCurses/OCCurses-Info.plist";
+				MODULEMAP_FILE = OCCurses/OCCurses.modulemap;
 				OTHER_LDFLAGS = (
 					"-lpanel",
 					"-lncurses",
@@ -519,6 +560,7 @@
 				GCC_PREFIX_HEADER = "OCCursesTests/OCCursesTests-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "OCCursesTests/OCCursesTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				OTHER_LDFLAGS = "-lncurses";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.itaiferber.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,6 +582,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCCursesTests/OCCursesTests-Prefix.pch";
 				INFOPLIST_FILE = "OCCursesTests/OCCursesTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				OTHER_LDFLAGS = "-lncurses";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.itaiferber.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

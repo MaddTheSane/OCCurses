@@ -29,11 +29,13 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "OCAttribute.h"
-#import "OCBorder.h"
-#import "OCCharacter.h"
-#import "OCColorPair.h"
-#import "OCKey.h"
+#import <OCCurses/OCAttribute.h>
+#import <OCCurses/OCBorder.h>
+#import <OCCurses/OCCharacter.h>
+#import <OCCurses/OCColorPair.h>
+#import <OCCurses/OCKey.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 /*!
  @class OCWindow
@@ -44,24 +46,19 @@
  Windows have titles, frames, subwindows, enabled attributes, and borders. They can be written to
  and scanned from, and text attributes can be easily applied using the OCAttribute class.
  */
-@interface OCWindow : NSObject {
-	NSString *_title;
-	NSRect _frame;
-	NSMutableArray *_subwindows;
-	NSMutableSet *_attributes;
-	OCBorder *_border;
-	BOOL _keypadEnabled;
-	
-	WINDOW *_window;
-}
+@interface OCWindow : NSObject
 
 #pragma mark - Properties
-@property (readonly) NSString *title;
+@property (readonly, copy) NSString *title;
+/*!
+ Returns the frame of the window as a formatted rectangle
+ @returns the frame of the window
+ */
 @property (readonly) NSRect frame;
 
 #pragma mark - Initializers
 /*!
- Creates a new main window (representing stdscr) for the program to run with. This window is the
+ Creates a new main window (representing <code>stdscr</code>) for the program to run with. This window is the
  root of the window hierarchy.
  @return the main window
  */
@@ -70,7 +67,7 @@
 /*!
  Creates a new autoreleased window with a given title and frame (and a default parent window of 
  stdscr).
- @param theTitle the title to give the window (precondition: theTitle != nil)
+ @param theTitle the title to give the window (precondition: <code>theTitle != nil</code>)
  @param theFrame the frame to give the window
  @returns a new autoreleased window
  */
@@ -108,7 +105,7 @@
 /*!
  Returns an array of subwindows belonging to the current window.
  */
-- (NSArray *)subwindows;
+- (NSArray<OCWindow*> *)subwindows;
  
 /*!
  Adds a subwindow to the current window.
@@ -144,17 +141,11 @@
  Returns the location of the cursor in the window.
  @returns the location of the cursor
  */
-- (NSPoint)cursorLocation;
-
-/*!
- Returns the frame of the window as a formatted rectangle
- @returns the frame of the window
- */
-- (NSRect)frame;
+@property (readonly) NSPoint cursorLocation;
 
 /*!
  Sets the frame of the window to the given rectangle. Resizes and moves as necessary.
- @param thePoint the frame to use (precondition: the frame is valid)
+ @param theFrame the frame to use (precondition: the frame is valid)
  @returns whether the operation was performed successfully
  */
 - (BOOL)setFrame:(NSRect)theFrame;
@@ -174,24 +165,18 @@
  By default, a keypad is enabled for the window.
  @returns whether a keypad is enabled
  */
-- (BOOL)isKeypadEnabled;
-
-/*!
- Enables or disables a keypad for the window.
- @param theFlag whether to enable or disable the keypad
- */
-- (void)setKeypadEnabled:(BOOL)theFlag;
+@property (nonatomic, getter=isKeypadEnabled) BOOL keypadEnabled;
 
 
 #pragma mark - Attribute Methods
 /*!
- Enables the given text attribute using wattron() and adds it to a list of enabled attributes.
+ Enables the given text attribute using \c wattron() and adds it to a list of enabled attributes.
  @param theAttribute the attribute to apply (precondition: theAttribute != nil)
  */
 - (void)enableAttribute:(OCAttribute *)theAttribute;
 
 /*!
- Disables the given textAttribute using wattroff() and removes it from a list of enabled attributes.
+ Disables the given textAttribute using \c wattroff() and removes it from a list of enabled attributes.
  @param theAttribute the attribute to remove (precondition: theAttribute != nil)
  */
 - (void)disableAttribute:(OCAttribute *)theAttribute;
@@ -201,21 +186,21 @@
  @see enableAttribute for an explanation of how attributes are applied
  @param theSet the set of attributes to apply (precondition: theSet != nil)
  */
-- (void)enableAttributes:(NSSet *)theSet;
+- (void)enableAttributes:(NSSet<OCAttribute*> *)theSet;
 
 /*!
  Disables a set of attributes, calling -disableAttribute: using each one.
  @see disableAttribute for an explanation of how attributes are removed
  @param theSet the set of attributes to remove (precondition: theSet != nil)
  */
-- (void)disableAttributes:(NSSet *)theSet;
+- (void)disableAttributes:(NSSet<OCAttribute*> *)theSet;
 
 /*!
  Sets the given attributes using wattrset() (destroying the previous attribute configuration) and
  replaces the list of enabled attributes with the given one. Pass in nil to disable all attributes.
  @param theSet the set of attributes to set
  */
-- (void)setAttributes:(NSSet *)theSet;
+- (void)setAttributes:(NSSet<OCAttribute*> *)theSet;
 
 /*!
  Disables all attributes using watterset() and replaces the list of enabled attributes with an empty
@@ -226,16 +211,12 @@
 
 #pragma mark - Border Methods
 /*!
+ The currently applied border (nil if no border is set).
  Returns the currently applied border (nil if no border is set).
  @returns the window's border
+ @discussion setting to \c nil removes the border.
  */
-- (OCBorder *)border;
-
-/*!
- Applies a new border to the window (if theBorder is nil, it removes the border).
- @param theBorder the border to set
- */
-- (void)setBorder:(OCBorder *)theBorder;
+@property (nullable, nonatomic, strong) OCBorder *border;
 
 
 #pragma mark - Printing Methods
@@ -323,7 +304,7 @@
  the user types in no input.
  @returns a string of characters the user has input
  */
-- (NSString *)getString;
+- (nullable NSString *)getString;
 
 /*!
  Scans a string of characters from the window at the given cursor position. Returns nil if
@@ -331,7 +312,7 @@
  @param theLocation the location to scan characters from
  @return a string of characters the user has input
  */
-- (NSString *)getStringFromLocation:(NSPoint)theLocation;
+- (nullable NSString *)getStringFromLocation:(NSPoint)theLocation;
 
 #pragma mark - Scanning Methods
 /*!
@@ -368,3 +349,5 @@
 - (BOOL)scanFromWindowAtLocation:(NSPoint)theLocation format:(NSString *)theFormat arguments:(va_list)theList;
 
 @end
+
+NS_ASSUME_NONNULL_END
